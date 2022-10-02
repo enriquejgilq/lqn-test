@@ -209,7 +209,7 @@ const Test = () => {
             <p>
               <b> Enunciado: </b> (Inglés) Your task in this exercise is as
               follows: Take the following selection of 70 English Pokemon names
-              (extracted from Wikipedia's list of Pokemon), and generate the/a
+              (extracted from Wikipedias list of Pokemon), and generate the/a
               sequence with the highest possible number of Pokemon names where
               the subsequent name starts with the final letter of the preceding
               name. No Pokemon name is to be repeated.
@@ -219,8 +219,7 @@ const Test = () => {
           <div className={styles.listPokemon}>
             <div>
               <p>
-                {" "}
-                <b> Lista original: </b>{" "}
+                <b> Lista original: </b> 
               </p>
               {pokemon.map((item: string, index: any) => (
                 <p key={index}> {item}</p>
@@ -228,7 +227,7 @@ const Test = () => {
             </div>
             <div>
               <p>
-                <b> Lista de nombre de pokemon's </b>{" "}
+                <b> Lista de nombre de pokemons </b>{" "}
               </p>
               {pokemonArray.map((item: string, index) => (
                 <p key={index}> {item}</p>

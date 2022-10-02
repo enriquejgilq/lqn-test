@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import Modal from "@mui/material/Modal";
+import Error from "./Error";
 import { Button } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { getModal, getQuery, getDetailsPeople } from "../Redux/selectors/app";
-import { handleOpenModal, handleQuery, getDetails } from "../Redux/actions/app";
+import { getModal, getQuery, getDetailsPeople, getErrorDetails } from "../Redux/selectors/app";
+import { handleOpenModal, handleQuery, getDetails, getDetailsError } from "../Redux/actions/app";
 import { gql, useQuery } from "@apollo/client";
 import styles from "./components.module.css";
 import Details from "./Details";
@@ -15,6 +16,9 @@ export default function ModalDetails() {
   const openModal = useSelector(getModal);
   const id = useSelector(getQuery);
   const details = useSelector(getDetailsPeople);
+  const errorRequest = useSelector(getErrorDetails);
+
+
   const router = useRouter();
   //query para consultar la data desde el url
   const DETAIL_CHARACTER: any = gql`{ person(id: "${router.query.details}"){
@@ -52,7 +56,7 @@ export default function ModalDetails() {
       dispatch(handleOpenModal(true));
     }
   }, [id]);
-
+   
   return (
     <div>
       <Modal
@@ -62,18 +66,14 @@ export default function ModalDetails() {
         aria-describedby="modal-modal-description"
       >
         <div className={styles.modal}>
-          {loading ? (
-            <div className={styles.loaderModal}>
-              <Loader />
-            </div>
-          ) : (
-            <>
-              <Details details={details.person} />
-            </>
-          )}
+          {loading && (<div className={styles.loaderModal}>  <Loader /> </div>)}
+          {data && (<Details details={details.person} />)}
+          {error && (<Error errorRequest='Algo ha salido mal al consultar el detalle' />)}
+          <div> 
           <Button variant="outlined" onClick={handleModal}>
             Cerrar modal!
           </Button>
+          </div>
         </div>
       </Modal>
     </div>

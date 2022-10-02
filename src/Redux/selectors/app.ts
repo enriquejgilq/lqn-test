@@ -9,3 +9,5 @@ export const getListPeople = state => appState(state).list?.allPeople?.people
 export const getDetailsPeople = state => appState(state).detailCharacter
 //error en consultas
 export const getError = state => appState(state).error
+//error del detalle 
+export const getErrorDetails = state => appState(state).errorDetails

@@ -14,27 +14,28 @@ export default function Selects({ item }) {
   const [film, setFilm] = React.useState("");
   const [datadirector, setDataDataDirector] = React.useState<any>([]);
   const [dataPlanets, setDataPlanets] = React.useState<any>([]);
-//funcion para el cambio de estado del select 
+  //funcion para el cambio de estado del select
+    //filtramos toda la info donde film sea igual al film seleccionado del select
+   
   const handleChange = (event: SelectChangeEvent) => {
     setFilm(event.target.value as string);
+    const dataDirAux = dataFilms?.person?.filmConnection?.edges.filter(
+      (item) => item.node.title === event.target.value
+    );
+    setDataDataDirector(dataDirAux);
   };
   useEffect(() => {
-    //primero se evalua si datafilms existe si existe se puede trabajar los siguientes array 
-    //filtramos toda la info donde film sea igual al film seleccionado 
-    //luego se mapea la data para tener el director y los planeatas de dichas peliculas
-    //si alguno de ellos cambia se hace un efecto para recibir los cambios y actualizar el nuevo estado, tanto de 
+    //primero se evalua si datafilms existe si existe se puede trabajar los siguientes array
+   //luego se mapea la data que se guardo en el select de la pelicula  los planeatas de dichas peliculas
+    //si alguno de ellos cambia se hace un efecto para recibir los cambios y actualizar el nuevo estado, tanto de
     //los directores como de los planetas
-    if(dataFilms){
-        const dataDirAux = dataFilms?.person?.filmConnection?.edges.filter(
-            (item) => item.node.title === film );
-          setDataDataDirector(dataDirAux);
-          const dataPlanetsAux = datadirector?.map(
-            (item) => item.node.planetConnection.planets
-          );
-          setDataPlanets(dataPlanetsAux[0]);
+    if (dataFilms) {
+      const dataPlanetsAux = datadirector?.map(
+        (item) => item.node.planetConnection.planets
+      );
+      setDataPlanets(dataPlanetsAux[0]);
     }
-    
-  }, [film,datadirector]);
+  }, [film, datadirector]);
 
   return (
     <Box sx={{ minWidth: 120 }}>
@@ -50,7 +51,9 @@ export default function Selects({ item }) {
           onChange={handleChange}
         >
           {item?.map((item, index) => (
-            <MenuItem  key={index} value={item}>{item}</MenuItem>
+            <MenuItem key={index} value={item}>
+              {item}
+            </MenuItem>
           ))}
         </Select>
       </FormControl>
@@ -63,7 +66,7 @@ export default function Selects({ item }) {
         </div>
         <div>
           <p> Planetas:</p>
-          {dataPlanets?.map((item,index) => (
+          {dataPlanets?.map((item, index) => (
             <Chips key={index} item={item.name} />
           ))}
         </div>

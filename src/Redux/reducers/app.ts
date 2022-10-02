@@ -45,7 +45,7 @@ export default function toDoApp(state = initialStateApp, action) {
     case GET_CHARACTER_ID_ERROR: {
       return {
         ...state,
-        error: action.payload,
+        errorDetails: action.payload,
         detailCharacter: {},
       };
     }

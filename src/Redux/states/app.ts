@@ -3,5 +3,6 @@ export const initialStateApp :any= {
     detailCharacter:{},
     idQuery:'',
     modal:false,
-    error:false
+    error:false,
+    errorDetails: false,
 };

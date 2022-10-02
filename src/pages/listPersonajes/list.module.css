@@ -1,0 +1,27 @@
+
+.listCharacters {
+  background-image: url("../../assets/stars-1654074_1920.jpg");
+}
+
+.error {
+  align-items: center;
+  height: 100vh;
+}
+.error > h1 {
+  color: #ffc300;
+  text-align: center;
+}
+.error > button {
+  background-color: #ffc300;
+  color: black;
+  font-weight: bold;
+}
+
+.loader{
+  display: flex;
+  height:  100vh;
+  padding:100px;
+  justify-content: center;
+  align-items: center;
+}
+ 

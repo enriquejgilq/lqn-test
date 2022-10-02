@@ -49,8 +49,8 @@ export default function Selects({ item }) {
           label="Seleccione pelicula"
           onChange={handleChange}
         >
-          {item?.map((item) => (
-            <MenuItem value={item}>{item}</MenuItem>
+          {item?.map((item, index) => (
+            <MenuItem  key={index} value={item}>{item}</MenuItem>
           ))}
         </Select>
       </FormControl>

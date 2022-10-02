@@ -1,3 +1,4 @@
+/* eslint no-use-before-define: 0 */
 import React, { useState, useEffect } from "react";
 import { Button } from "@mui/material";
 import styles from "./test.module.css";
@@ -221,7 +222,7 @@ const Test = () => {
                 {" "}
                 <b> Lista original: </b>{" "}
               </p>
-              {pokemon.map((item: string, index:any) => (
+              {pokemon.map((item: string, index: any) => (
                 <p key={index}> {item}</p>
               ))}
             </div>

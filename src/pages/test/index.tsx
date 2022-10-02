@@ -221,16 +221,16 @@ const Test = () => {
                 {" "}
                 <b> Lista original: </b>{" "}
               </p>
-              {pokemon.map((item: string) => (
-                <p> {item}</p>
+              {pokemon.map((item: string, index:any) => (
+                <p key={index}> {item}</p>
               ))}
             </div>
             <div>
               <p>
                 <b> Lista de nombre de pokemon's </b>{" "}
               </p>
-              {pokemonArray.map((item: string) => (
-                <p> {item}</p>
+              {pokemonArray.map((item: string, index) => (
+                <p key={index}> {item}</p>
               ))}
             </div>
           </div>

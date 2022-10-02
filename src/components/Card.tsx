@@ -19,7 +19,7 @@ const Card = ({ data }) => {
       <h1> Lista de personajes</h1>
       <div className={styles.gridcontainer}>
         {data.map((item, index) => (
-          <div className={styles.griditem}>
+          <div key={index} className={styles.griditem}>
             <h3>{item.name} </h3>
             <div>
               <p>

@@ -57,14 +57,14 @@ export default function Selects({ item }) {
       <div className={styles.chips}>
         <div>
           <p> Director:</p>
-          {datadirector?.map((item) => (
-            <Chips item={item.node.director} />
+          {datadirector?.map((item, index) => (
+            <Chips key={index} item={item.node.director} />
           ))}
         </div>
         <div>
           <p> Planetas:</p>
-          {dataPlanets?.map((item) => (
-            <Chips item={item.name} />
+          {dataPlanets?.map((item,index) => (
+            <Chips key={index} item={item.name} />
           ))}
         </div>
       </div>

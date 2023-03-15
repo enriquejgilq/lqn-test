@@ -20,6 +20,10 @@ const pages = [
     url: "/listPersonajes",
     title: "Website Frontend",
   },
+  {
+    url: "/embebido",
+    title: "embebidos",
+  },
 ];
 
 const ResponsiveAppBar = () => {

@@ -6,15 +6,16 @@ import graphqlClient from "../../graphql/apollo";
 import { Provider } from "react-redux";
 import { store, persistor, sagaMiddleware } from "../Redux/store";
 import { PersistGate } from 'redux-persist/integration/react';
- 
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <> 
+    <>
       <Provider store={store}>
         <ApolloProvider client={graphqlClient}>
           <PersistGate loading={null} persistor={persistor}>
-               <Component {...pageProps} />
-             <TemporaryDrawer />
+            <Component {...pageProps} />
+            <p> asd</p>
+            <TemporaryDrawer />
           </PersistGate>
         </ApolloProvider>
       </Provider> ,

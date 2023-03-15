@@ -219,7 +219,7 @@ const Test = () => {
           <div className={styles.listPokemon}>
             <div>
               <p>
-                <b> Lista original: </b> 
+                <b> Lista original: </b>
               </p>
               {pokemon.map((item: string, index: any) => (
                 <p key={index}> {item}</p>

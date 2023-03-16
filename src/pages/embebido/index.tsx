@@ -2,7 +2,7 @@ import React from 'react'
 
 function Embebido() {
     return (
-        <div>
+        <div style={{ display: 'flex', width: '1000px', height: '1000px' }}>
             <iframe id="inlineFrameExample"
                 title="Inline Frame Example"
                 width="1000"

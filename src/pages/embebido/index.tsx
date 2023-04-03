@@ -7,7 +7,7 @@ function Embebido() {
                 title="Inline Frame Example"
                 width="1300"
                 height="1000"
-                src="https://dev.loquenecesito.co/clients?code=DLFvoq5DJ3Kk">
+                src="https://dev.loquenecesito.co/c/perfilador-credito/datos-personales?referrerCode=hmOEG65N7BkY&logo=1&utm_source=lqn_clients&utm_medium=client_button">
             </iframe>
 
 
